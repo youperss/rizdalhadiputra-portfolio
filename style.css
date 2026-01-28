@@ -506,7 +506,7 @@ h6 {
     }
 }
 
-/* Floating Items (Realistic PNG Images - No Background) */
+/* Floating Items (Transparent PNG Images) */
 .floating-item {
     position: absolute;
     bottom: -80px;
@@ -514,15 +514,13 @@ h6 {
     align-items: center;
     justify-content: center;
     animation: floatItem linear infinite;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .floating-item img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    mix-blend-mode: screen;
-    /* Makes black background transparent */
 }
 
 @keyframes floatItem {

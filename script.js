@@ -23,7 +23,7 @@ function initFloatingCards() {
     const cardSymbols = ['♠', '♥', '♦', '♣'];
     const cardValues = ['A', 'K', 'Q', 'J'];
 
-    // Extreme magic items with realistic PNG images
+    // All floating items with transparent PNG images
     const extremeItems = [
         { name: 'scorpion', img: 'assets/scorpion.png' },
         { name: 'spider', img: 'assets/spider.png' },
@@ -31,15 +31,15 @@ function initFloatingCards() {
         { name: 'blade', img: 'assets/blade.png' },
         { name: 'blood', img: 'assets/blood.png' },
         { name: 'skull', img: 'assets/skull.png' },
+        // Playing cards
+        { name: 'card', img: 'assets/card_ace_spades.png' },
+        { name: 'card', img: 'assets/card_king_hearts.png' },
+        { name: 'card', img: 'assets/card_queen_diamonds.png' },
+        { name: 'card', img: 'assets/card_jack_clubs.png' },
     ];
 
-    // Create playing cards (kartu remi)
-    for (let i = 0; i < 10; i++) {
-        createFloatingCard(container, cardSymbols, cardValues);
-    }
-
-    // Create extreme items (hewan dan objek)
-    for (let i = 0; i < 12; i++) {
+    // Create all floating items (hewan, objek, dan kartu)
+    for (let i = 0; i < 18; i++) {
         createFloatingItem(container, extremeItems);
     }
 }
