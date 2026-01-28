@@ -33,13 +33,8 @@ function initFloatingCards() {
         { name: 'skull', img: 'assets/skull.png' },
     ];
 
-    // Create cards (8 pieces)
-    for (let i = 0; i < 8; i++) {
-        createFloatingCard(container, cardSymbols, cardValues);
-    }
-
-    // Create extreme items (12 pieces - reduced for performance with realistic images)
-    for (let i = 0; i < 12; i++) {
+    // Only create extreme items (hewan dan objek saja, tanpa kartu)
+    for (let i = 0; i < 15; i++) {
         createFloatingItem(container, extremeItems);
     }
 }
