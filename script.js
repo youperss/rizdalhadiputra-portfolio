@@ -23,17 +23,40 @@ function initFloatingCards() {
     const cardSymbols = ['♠', '♥', '♦', '♣'];
     const cardValues = ['A', 'K', 'Q', 'J'];
 
-    // Extreme magic items with emoji
+    // Extreme magic items with detailed SVG icons
     const extremeItems = [
-        { emoji: '🦂', name: 'scorpion' },      // Kalajengking
-        { emoji: '🕷️', name: 'spider' },        // Tarantula
-        { emoji: '🪳', name: 'bug' },           // Kelabang/serangga
-        { emoji: '🗡️', name: 'blade' },         // Pisau
-        { emoji: '🔪', name: 'knife' },         // Parang
-        { emoji: '📍', name: 'pin' },           // Paku
-        { emoji: '💉', name: 'needle' },        // Jarum
-        { emoji: '🩸', name: 'blood' },         // Tetesan darah
-        { emoji: '⚔️', name: 'sword' },         // Badik
+        {
+            name: 'scorpion',
+            svg: `<svg viewBox="0 0 64 64" fill="currentColor"><path d="M52 28c-2-4-6-6-10-6h-4l-2-4c-1-2-3-4-6-4s-5 2-6 4l-2 4h-4c-4 0-8 2-10 6-2 3-2 7 0 10l8 12c2 3 5 4 8 4h16c3 0 6-1 8-4l8-12c2-3 2-7 0-10zM32 18c1 0 2 1 3 2l1 2h-8l1-2c1-1 2-2 3-2z"/><path d="M58 16c-1-2-3-4-6-4-2 0-4 1-5 3l-3 5 2 2 4-6c0-1 1-2 2-2 1 0 2 1 3 2 1 2 1 4-1 6l-6 8 2 2 6-8c3-4 3-8 2-8zM6 16c1-2 3-4 6-4 2 0 4 1 5 3l3 5-2 2-4-6c0-1-1-2-2-2-1 0-2 1-3 2-1 2-1 4 1 6l6 8-2 2-6-8c-3-4-3-8-2-8z"/></svg>`
+        },
+        {
+            name: 'spider',
+            svg: `<svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="36" rx="10" ry="8"/><circle cx="32" cy="24" r="6"/><path d="M26 24c-8-4-16 0-20 8M38 24c8-4 16 0 20 8M24 32c-10 0-18 6-20 14M40 32c10 0 18 6 20 14M26 40c-6 6-8 14-6 20M38 40c6 6 8 14 6 20M28 28c-4-8-2-16 4-22M36 28c4-8 2-16-4-22" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>`
+        },
+        {
+            name: 'centipede',
+            svg: `<svg viewBox="0 0 64 64" fill="currentColor"><path d="M8 32c0-4 28-4 48 0 0 4-28 4-48 0z"/><path d="M12 28v-8M16 26v-10M20 24v-10M24 24v-8M28 24v-6M32 24v-4M36 24v-6M40 24v-8M44 24v-10M48 26v-10M52 28v-8M12 36v8M16 38v10M20 40v10M24 40v8M28 40v6M32 40v4M36 40v6M40 40v8M44 40v10M48 38v10M52 36v8" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="32" r="4"/></svg>`
+        },
+        {
+            name: 'blade',
+            svg: `<svg viewBox="0 0 64 64" fill="currentColor"><path d="M56 8L20 44l-4 12 12-4L64 16c0-4-4-8-8-8z"/><path d="M16 48l-8 8 4 4 8-8z"/></svg>`
+        },
+        {
+            name: 'knife',
+            svg: `<svg viewBox="0 0 64 64" fill="currentColor"><path d="M8 56L48 16c4-4 8-8 8-12 0-2-2-4-4-4-4 0-8 4-12 8L4 48c-2 2-2 6 0 8 2 2 6 2 8 0z"/><rect x="2" y="50" width="12" height="6" rx="2"/></svg>`
+        },
+        {
+            name: 'nail',
+            svg: `<svg viewBox="0 0 64 64" fill="currentColor"><rect x="28" y="16" width="8" height="40" rx="1"/><polygon points="28,56 32,64 36,56"/><ellipse cx="32" cy="12" rx="12" ry="6"/></svg>`
+        },
+        {
+            name: 'blood',
+            svg: `<svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4c-12 16-20 28-20 40 0 11 9 20 20 20s20-9 20-20c0-12-8-24-20-40z"/></svg>`
+        },
+        {
+            name: 'skull',
+            svg: `<svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="28" rx="20" ry="18"/><rect x="20" y="42" width="24" height="12" rx="2"/><ellipse cx="24" cy="28" rx="5" ry="6" fill="#000"/><ellipse cx="40" cy="28" rx="5" ry="6" fill="#000"/><path d="M28 48v6M32 48v8M36 48v6" stroke="#000" stroke-width="2"/></svg>`
+        },
     ];
 
     // Create cards (8 pieces)
@@ -86,18 +109,20 @@ function createFloatingItem(container, items) {
     const left = Math.random() * 100;
     const delay = Math.random() * 20;
     const duration = Math.random() * 12 + 18;
-    const size = Math.random() * 20 + 20;
+    const size = Math.random() * 24 + 28;
     const rotation = Math.random() * 360;
 
-    item.innerHTML = selected.emoji;
+    item.innerHTML = selected.svg;
     item.classList.add(selected.name);
 
     item.style.cssText = `
         left: ${left}%;
         animation-delay: ${delay}s;
         animation-duration: ${duration}s;
-        font-size: ${size}px;
+        width: ${size}px;
+        height: ${size}px;
         --rotation: ${rotation}deg;
+        color: var(--color-red);
     `;
 
     container.appendChild(item);
