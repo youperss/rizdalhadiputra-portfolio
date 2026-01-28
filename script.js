@@ -33,8 +33,13 @@ function initFloatingCards() {
         { name: 'skull', img: 'assets/skull.png' },
     ];
 
-    // Only create extreme items (hewan dan objek saja, tanpa kartu)
-    for (let i = 0; i < 15; i++) {
+    // Create playing cards (kartu remi)
+    for (let i = 0; i < 10; i++) {
+        createFloatingCard(container, cardSymbols, cardValues);
+    }
+
+    // Create extreme items (hewan dan objek)
+    for (let i = 0; i < 12; i++) {
         createFloatingItem(container, extremeItems);
     }
 }
