@@ -23,23 +23,24 @@ function initFloatingCards() {
     const cardSymbols = ['♠', '♥', '♦', '♣'];
     const cardValues = ['A', 'K', 'Q', 'J'];
 
-    // Extreme magic items with PNG images (black background)
+    // All floating items using custom SVG files
     const extremeItems = [
-        { name: 'scorpion', img: 'assets/scorpion.png' },
-        { name: 'spider', img: 'assets/spider.png' },
-        { name: 'centipede', img: 'assets/centipede.png' },
-        { name: 'blade', img: 'assets/blade.png' },
-        { name: 'blood', img: 'assets/blood.png' },
-        { name: 'skull', img: 'assets/skull.png' },
+        { name: 'item1', img: 'assets/gambar animasi/1.svg' },
+        { name: 'item2', img: 'assets/gambar animasi/2.svg' },
+        { name: 'item3', img: 'assets/gambar animasi/3.svg' },
+        { name: 'item4', img: 'assets/gambar animasi/4.svg' },
+        { name: 'item5', img: 'assets/gambar animasi/5.svg' },
+        { name: 'item6', img: 'assets/gambar animasi/6.svg' },
+        { name: 'item7', img: 'assets/gambar animasi/7.svg' },
+        { name: 'item8', img: 'assets/gambar animasi/8.svg' },
+        { name: 'item9', img: 'assets/gambar animasi/9.svg' },
+        { name: 'item10', img: 'assets/gambar animasi/10.svg' },
+        { name: 'item11', img: 'assets/gambar animasi/11.svg' },
+        { name: 'item12', img: 'assets/gambar animasi/12.svg' },
     ];
 
-    // Create playing cards (kartu remi - CSS symbols)
-    for (let i = 0; i < 8; i++) {
-        createFloatingCard(container, cardSymbols, cardValues);
-    }
-
-    // Create extreme items (hewan dan objek - PNG)
-    for (let i = 0; i < 12; i++) {
+    // Create floating items (20 items randomly from 12 SVGs)
+    for (let i = 0; i < 20; i++) {
         createFloatingItem(container, extremeItems);
     }
 }
