@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#000"/>
+  <text x="5" y="22" font-family="Arial Black, sans-serif" font-size="14" font-weight="bold" fill="#fff">R</text>
+  <text x="17" y="24" font-family="Arial, sans-serif" font-size="16" fill="#dc143c">♠</text>
+</svg>
